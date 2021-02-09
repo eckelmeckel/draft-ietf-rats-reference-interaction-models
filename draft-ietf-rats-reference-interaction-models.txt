@@ -3,12 +3,15 @@
 
 
 RATS Working Group                                           H. Birkholz
-Internet-Draft                                                  M. Eckel
-Intended status: Informational                            Fraunhofer SIT
-Expires: 26 April 2021                                         C. Newton
+Internet-Draft                                            Fraunhofer SIT
+Intended status: Informational                                    W. Pan
+Expires: 13 August 2021                              Huawei Technologies
+                                                                 E. Voit
+                                                                   Cisco
+                                                               C. Newton
                                                                  L. Chen
                                                     University of Surrey
-                                                         23 October 2020
+                                                         9 February 2021
 
 
      Reference Interaction Models for Remote Attestation Procedures
@@ -17,8 +20,8 @@ Expires: 26 April 2021                                         C. Newton
 Abstract
 
    This document describes interaction models for remote attestation
-   procedures (RATS).  Three conveying mechanisms - Challenge/Response,
-   Uni-Directional, and Streaming Remote Attestation - are illustrated
+   procedures (RATS).  Three conveying mechanisms -- Challenge/Response,
+   Uni-Directional, and Streaming Remote Attestation -- are illustrated
    and defined.  Analogously, a general overview about the information
    elements typically used by corresponding conveyance protocols are
    highlighted.  Privacy preserving conveyance of Evidence via Direct
@@ -47,27 +50,16 @@ Status of This Memo
    working documents as Internet-Drafts.  The list of current Internet-
    Drafts is at https://datatracker.ietf.org/drafts/current/.
 
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                 [Page 1]
-
-Internet-Draft                    REIM                      October 2020
-
-
    Internet-Drafts are draft documents valid for a maximum of six months
    and may be updated, replaced, or obsoleted by other documents at any
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 April 2021.
+   This Internet-Draft will expire on 13 August 2021.
 
 Copyright Notice
 
-   Copyright (c) 2020 IETF Trust and the persons identified as the
+   Copyright (c) 2021 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -81,49 +73,41 @@ Copyright Notice
 
 Table of Contents
 
-   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
-   2.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   4
-   3.  Disambiguation  . . . . . . . . . . . . . . . . . . . . . . .   4
-   4.  Scope and Intent  . . . . . . . . . . . . . . . . . . . . . .   4
-   5.  Direct Anonymous Attestation  . . . . . . . . . . . . . . . .   5
-     5.1.  Endorsers . . . . . . . . . . . . . . . . . . . . . . . .   6
-     5.2.  Endorsers for Direct Anonymous Attestation  . . . . . . .   6
-   6.  Normative Prerequisites . . . . . . . . . . . . . . . . . . .   7
-   7.  Generic Information Elements  . . . . . . . . . . . . . . . .   8
-   8.  Interaction Models  . . . . . . . . . . . . . . . . . . . . .  10
-     8.1.  Challenge/Response Remote Attestation . . . . . . . . . .  10
-     8.2.  Uni-Directional Remote Attestation  . . . . . . . . . . .  12
-     8.3.  Streaming Remote Attestation  . . . . . . . . . . . . . .  14
-   9.  Additional Application-Specific Requirements  . . . . . . . .  16
-     9.1.  Confidentiality . . . . . . . . . . . . . . . . . . . . .  16
-     9.2.  Mutual Authentication . . . . . . . . . . . . . . . . . .  16
-     9.3.  Hardware-Enforcement/Support  . . . . . . . . . . . . . .  16
-   10. Implementation Status . . . . . . . . . . . . . . . . . . . .  16
-     10.1.  Implementer  . . . . . . . . . . . . . . . . . . . . . .  17
-     10.2.  Implementation Name  . . . . . . . . . . . . . . . . . .  17
-     10.3.  Implementation URL . . . . . . . . . . . . . . . . . . .  17
-     10.4.  Maturity . . . . . . . . . . . . . . . . . . . . . . . .  17
-     10.5.  Coverage and Version Compatibility . . . . . . . . . . .  17
-     10.6.  License  . . . . . . . . . . . . . . . . . . . . . . . .  18
-     10.7.  Implementation Dependencies  . . . . . . . . . . . . . .  18
-
-
-
-Birkholz, et al.          Expires 26 April 2021                 [Page 2]
-
-Internet-Draft                    REIM                      October 2020
-
-
-     10.8.  Contact  . . . . . . . . . . . . . . . . . . . . . . . .  18
-   11. Security and Privacy Considerations . . . . . . . . . . . . .  18
-   12. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  18
-   13. Change Log  . . . . . . . . . . . . . . . . . . . . . . . . .  18
-   14. References  . . . . . . . . . . . . . . . . . . . . . . . . .  20
-     14.1.  Normative References . . . . . . . . . . . . . . . . . .  20
-     14.2.  Informative References . . . . . . . . . . . . . . . . .  21
+   1.  Introduction
+   2.  Terminology
+   3.  Disambiguation
+   4.  Scope and Intent
+   5.  Direct Anonymous Attestation
+     5.1.  Endorsers
+     5.2.  Endorsers for Direct Anonymous Attestation
+   6.  Normative Prerequisites
+   7.  Generic Information Elements
+   8.  Interaction Models
+     8.1.  Challenge/Response Remote Attestation
+     8.2.  Uni-Directional Remote Attestation
+     8.3.  Streaming Remote Attestation
+   9.  Additional Application-Specific Requirements
+     9.1.  Confidentiality
+     9.2.  Mutual Authentication
+     9.3.  Hardware-Enforcement/Support
+   10. Implementation Status
+     10.1.  Implementer
+     10.2.  Implementation Name
+     10.3.  Implementation URL
+     10.4.  Maturity
+     10.5.  Coverage and Version Compatibility
+     10.6.  License
+     10.7.  Implementation Dependencies
+     10.8.  Contact
+   11. Security and Privacy Considerations
+   12. Acknowledgments
+   13. Change Log
+   14. References
+     14.1.  Normative References
+     14.2.  Informative References
    Appendix A.  CDDL Specification for a simple CoAP Challenge/
-           Response Interaction  . . . . . . . . . . . . . . . . . .  22
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  23
+           Response Interaction
+   Authors' Addresses
 
 1.  Introduction
 
@@ -132,8 +116,8 @@ Internet-Draft                    REIM                      October 2020
    create Attestation Results about the trustworthiness of an Attester's
    system component characteristics.  The Verifier's assessment in the
    form of Attestation Results is created based on Attestation Policies
-   and Evidence - trustable and tamper-evident Claims Sets about an
-   Attester's system component characteristics - generated by an
+   and Evidence -- trustable and tamper-evident Claims Sets about an
+   Attester's system component characteristics -- generated by an
    Attester.  The roles _Attester_ and _Verifier_, as well as the
    Conceptual Messages _Evidence_ and _Attestation Results_ are concepts
    defined by the RATS Architecture [I-D.ietf-rats-architecture].  This
@@ -160,15 +144,6 @@ Internet-Draft                    REIM                      October 2020
    other Conceptual Messages is out-of-scope the methods described can
    also be applied to the conveyance of, for example, Endorsements or
    Attestation Results.
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                 [Page 3]
-
-Internet-Draft                    REIM                      October 2020
-
 
 2.  Terminology
 
@@ -219,13 +194,6 @@ Internet-Draft                    REIM                      October 2020
    establishment, key distribution and enrollment, time synchronization,
    as well as certificate revocation.
 
-
-
-Birkholz, et al.          Expires 26 April 2021                 [Page 4]
-
-Internet-Draft                    REIM                      October 2020
-
-
    Furthermore, any processes and duties that go beyond carrying out
    remote attestation procedures are out-of-scope.  For instance, using
    the results of a remote attestation that are created by the Verifier,
@@ -270,18 +238,6 @@ Internet-Draft                    REIM                      October 2020
    role and the duties of a DAA Issuer are quite similar as illustrated
    in the following subsections.
 
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                 [Page 5]
-
-Internet-Draft                    REIM                      October 2020
-
-
 5.1.  Endorsers
 
    Via its Attesting Environments, an Attester only generates Evidence
@@ -323,20 +279,12 @@ Internet-Draft                    REIM                      October 2020
       from Endorser to Verifier.
 
    The zero-knowledge proofs required cannot be created by an Attester
-   alone - like the Endorsements of RoTs - and have to be created by a
-   trustable third entity - like an Endorser.  Due to that semantic
+   alone -- like the Endorsements of RoTs -- and have to be created by a
+   trustable third entity -- like an Endorser.  Due to that semantic
    overlap, the Endorser role is augmented via the definition of DAA
    duties as defined below.  This augmentation enables the Endorser to
    convey trustable third party statements both to Verifier roles and
    Attester roles.
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                 [Page 6]
-
-Internet-Draft                    REIM                      October 2020
-
 
 6.  Normative Prerequisites
 
@@ -378,21 +326,6 @@ Internet-Draft                    REIM                      October 2020
    Evidence Protection:  Evidence MUST be a set of well-formatted and
       well-protected Claims that an Attester can create and convey to a
       Verifier in a tamper-evident manner.
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                 [Page 7]
-
-Internet-Draft                    REIM                      October 2020
-
 
 7.  Generic Information Elements
 
@@ -443,13 +376,6 @@ Internet-Draft                    REIM                      October 2020
       A statement that is intended to uniquely distinguish received
       Evidence and/or determine the freshness of Evidence.
 
-
-
-Birkholz, et al.          Expires 26 April 2021                 [Page 8]
-
-Internet-Draft                    REIM                      October 2020
-
-
       A Verifier can also use a Handle as an indicator for authenticity
       or attestation provenance, as only Attesters and Verifiers that
       are intended to exchange Evidence should have knowledge of the
@@ -496,16 +422,6 @@ Internet-Draft                    REIM                      October 2020
    Evidence ('signedAttestationEvidence'):  _mandatory_
 
       A set of Claims that consists of a list of Authentication Secret
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                 [Page 9]
-
-Internet-Draft                    REIM                      October 2020
-
-
       IDs that each identifies an Authentication Secret in a single
       Attesting Environment, the Attester Identity, Claims, and a
       Handle.  Attestation Evidence MUST cryptographically bind all of
@@ -545,22 +461,6 @@ Internet-Draft                    REIM                      October 2020
    interaction models.
 
 8.1.  Challenge/Response Remote Attestation
-
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 10]
-
-Internet-Draft                    REIM                      October 2020
-
 
 .----------.                                                .----------.
 | Attester |                                                | Verifier |
@@ -610,14 +510,6 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    The Claim Selection narrows down the set of Claims collected and used
    to create Evidence to those that the Verifier requires.  If the Claim
    Selection is omitted, then by default all Claims that are known and
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 11]
-
-Internet-Draft                    REIM                      October 2020
-
-
    available on the Attester MUST be used to create corresponding
    Evidence.  For example when performing a boot integrity evaluation, a
    Verifier may only be requesting a particular subset of claims about
@@ -643,36 +535,6 @@ Internet-Draft                    REIM                      October 2020
    an Attester's trustworthiness.
 
 8.2.  Uni-Directional Remote Attestation
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 12]
-
-Internet-Draft                    REIM                      October 2020
-
 
 .----------.                                                .----------.
 | Attester |                                                | Verifier |
@@ -722,18 +584,10 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    similar to the Challenge/Response model (comparable with a RESTful
    GET operation), the specific manner how handles are created and used
    always remains as the distinguishing quality of this model.  In the
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 13]
-
-Internet-Draft                    REIM                      October 2020
-
-
    Uni-Directional model, handles are composed of trustable signed
    timestamps as shown in [I-D.birkholz-rats-tuda], potentially
    including other qualifying data.  The handles are created by an
-   external 3rd entity - the Handle Distributor - that includes a
+   external 3rd entity -- the Handle Distributor -- that includes a
    trustworthy source of time and takes on the role of a Time Stamping
    Authority (TSA, as initially defined in [RFC3161]).  Timstamps
    created from local clocks (absolute clocks using a global timescale,
@@ -750,41 +604,6 @@ Internet-Draft                    REIM                      October 2020
    scope of this document.
 
 8.3.  Streaming Remote Attestation
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 14]
-
-Internet-Draft                    REIM                      October 2020
-
 
 .----------.                                                .----------.
 | Attester |                                                | Verifier |
@@ -835,13 +654,6 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    mandate a refreshed Handle to be conveyed via another subscribe
    operation are out-of-scope of this document.
 
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 15]
-
-Internet-Draft                    REIM                      October 2020
-
-
 9.  Additional Application-Specific Requirements
 
    Depending on the use cases covered, there can be additional
@@ -878,25 +690,6 @@ Internet-Draft                    REIM                      October 2020
 
    Note to RFC Editor: Please remove this section as well as references
    to [BCP205] before AUTH48.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 16]
-
-Internet-Draft                    REIM                      October 2020
-
 
    This section records the status of known implementations of the
    protocol defined by this specification at the time of posting of this
@@ -942,17 +735,6 @@ Internet-Draft                    REIM                      October 2020
    The current version ('1bcb469') implements a challenge/response
    interaction model and is aligned with the exemplary specification of
    the CoAP FETCH bodies defined in Section Appendix A of this document.
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 17]
-
-Internet-Draft                    REIM                      October 2020
-
 
 10.6.  License
 
@@ -1002,14 +784,6 @@ Internet-Draft                    REIM                      October 2020
 
       -  Added details to the flow diagram
 
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 18]
-
-Internet-Draft                    REIM                      October 2020
-
-
       -  Integrated comments from Ned Smith (Intel)
 
       -  Reorganized sections and
@@ -1058,14 +832,6 @@ Internet-Draft                    REIM                      October 2020
 
       -  added CDDL spec for CoAP FETCH operation proof-of-concept
 
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 19]
-
-Internet-Draft                    REIM                      October 2020
-
-
    *  Changes from version 01 to version 02
 
       -  prepared the inclusion of additional reference models
@@ -1111,17 +877,6 @@ Internet-Draft                    REIM                      October 2020
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 20]
-
-Internet-Draft                    REIM                      October 2020
-
-
    [RFC3161]  Adams, C., Cain, P., Pinkas, D., and R. Zuccherato,
               "Internet X.509 Public Key Infrastructure Time-Stamp
               Protocol (TSP)", RFC 3161, DOI 10.17487/RFC3161, August
@@ -1162,36 +917,24 @@ Internet-Draft                    REIM                      October 2020
    [I-D.birkholz-rats-tuda]
               Fuchs, A., Birkholz, H., McDonald, I., and C. Bormann,
               "Time-Based Uni-Directional Attestation", Work in
-              Progress, Internet-Draft, draft-birkholz-rats-tuda-03, 13
-              July 2020, <http://www.ietf.org/internet-drafts/draft-
-              birkholz-rats-tuda-03.txt>.
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 21]
-
-Internet-Draft                    REIM                      October 2020
-
+              Progress, Internet-Draft, draft-birkholz-rats-tuda-04, 13
+              January 2021, <http://www.ietf.org/internet-drafts/draft-
+              birkholz-rats-tuda-04.txt>.
 
    [I-D.ietf-rats-architecture]
               Birkholz, H., Thaler, D., Richardson, M., Smith, N., and
               W. Pan, "Remote Attestation Procedures Architecture", Work
               in Progress, Internet-Draft, draft-ietf-rats-architecture-
-              07, 16 October 2020, <http://www.ietf.org/internet-drafts/
-              draft-ietf-rats-architecture-07.txt>.
+              08, 8 December 2020, <http://www.ietf.org/internet-drafts/
+              draft-ietf-rats-architecture-08.txt>.
 
    [I-D.ietf-rats-tpm-based-network-device-attest]
               Fedorkow, G., Voit, E., and J. Fitzgerald-McKay, "TPM-
               based Network Device Remote Integrity Verification", Work
               in Progress, Internet-Draft, draft-ietf-rats-tpm-based-
-              network-device-attest-04, 18 September 2020,
+              network-device-attest-06, 7 December 2020,
               <http://www.ietf.org/internet-drafts/draft-ietf-rats-tpm-
-              based-network-device-attest-04.txt>.
+              based-network-device-attest-06.txt>.
 
    [turtles]  Rudnicki, R., "Turtles All the Way Down: Foundation,
               Edifice, and Ruin in Faulkner and McCarthy", The Faulkner
@@ -1211,28 +954,6 @@ Appendix A.  CDDL Specification for a simple CoAP Challenge/Response
 
    In this example, evidence is created via the root-of-trust for
    reporting primitive operation "quote" that is provided by a TPM 2.0.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 22]
-
-Internet-Draft                    REIM                      October 2020
-
 
 RAIM-Bodies = CoAP-FETCH-Body / CoAP-FETCH-Response-Body
 
@@ -1278,25 +999,16 @@ Authors' Addresses
    Email: henk.birkholz@sit.fraunhofer.de
 
 
+   Wei Pan
+   Huawei Technologies
+
+   Email: william.panwei@huawei.com
 
 
+   Eric Voit
+   Cisco Systems
 
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 23]
-
-Internet-Draft                    REIM                      October 2020
-
-
-   Michael Eckel
-   Fraunhofer SIT
-   Rheinstrasse 75
-   64295 Darmstadt
-   Germany
-
-   Email: michael.eckel@sit.fraunhofer.de
+   Email: evoit@cisco.com
 
 
    Christopher Newton
@@ -1309,36 +1021,3 @@ Internet-Draft                    REIM                      October 2020
    University of Surrey
 
    Email: liqun.chen@surrey.ac.uk
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 26 April 2021                [Page 24]
