@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-02-09T07:28:00.176274+00:00",
+  "timestamp": "2021-02-10T10:40:48.759682+00:00",
   "repo": "ietf-rats-wg/draft-ietf-rats-reference-interaction-models",
   "labels": [
     {
@@ -49,6 +49,414 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 1,
+      "id": "MDU6SXNzdWU4MDUyNzg0NzA=",
+      "title": "Disambiguation as a part of Terminology",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/1",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\nThis section is talking about the disambiguation of terminology, so I suggest making it a sub-section of Section 2 Terminology.\r\n\r\n> Examples of these types of co-located environments include: a Trusted\r\n> Execution Environment (TEE), Baseboard Management Controllers (BMCs),\r\n> as well as other physical or logical protected/isolated/shielded\r\n> Computing Environments (e.g. embedded Secure Elements (eSE) or\r\n> Trusted Platform Modules (TPM)).",
+      "createdAt": "2021-02-10T08:06:38Z",
+      "updatedAt": "2021-02-10T08:06:38Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 2,
+      "id": "MDU6SXNzdWU4MDUyNzkyNzA=",
+      "title": "Context of co-located environments",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/2",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\nIn Section 1, 3 Disambiguation\r\n\r\nAbout \u201cthese types of co-located environments\u201d, The previous sentences are about the Verifier and Attester don\u2019t need to be remote. So \u201cthese\u201d is weird here, because here is about the attesting environment and target environment.",
+      "createdAt": "2021-02-10T08:07:57Z",
+      "updatedAt": "2021-02-10T08:07:57Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "MDU6SXNzdWU4MDUyODA0MDI=",
+      "title": "Direct Anonymous Attestation",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/3",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\nI think it\u2019s better to move this section to the bottom of the draft. DAA doesn\u2019t introduce a new information elements, and only augments the scope/definition of Attester Identity and Authentication Secret IDs, describing it after the introduction of all the 3 basic interaction models would be better. Putting DAA in the middle makes me feel the basic interaction models rely upon DAA, but actually it\u2019s not.\r\n",
+      "createdAt": "2021-02-10T08:09:42Z",
+      "updatedAt": "2021-02-10T08:09:42Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 4,
+      "id": "MDU6SXNzdWU4MDUyODE1MDc=",
+      "title": "Endorsers interact with Attesters even without DAA",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/4",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> This document extends the duties of the Endorser role as defined by\r\n> the RATS architecture with respect to the provision of these Attester\r\n> Identity documents to Attesters.  The existing duties of the Endorser\r\n> role and the duties of a DAA Issuer are quite similar as illustrated\r\n> in the following subsections.\r\n\r\nWithout DAA, I think the Endorser also needs to provision the Attester Identity to Attesters. And as I understand, the DAA Issuer is a supply chain entity before the Attester being shipped, so it is the Endorser when DAA is used, right? If yes, then in the next sentence, the comparison between Endorser and DAA Issuer doesn\u2019t make sense to me.",
+      "createdAt": "2021-02-10T08:11:35Z",
+      "updatedAt": "2021-02-10T08:11:35Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 5,
+      "id": "MDU6SXNzdWU4MDUyODIxMDE=",
+      "title": "Value add of the Endorsers section",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/5",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\nDoes this section have difference with the definition of Endorser in architecture draft? If not, is it necessary to keep this section?",
+      "createdAt": "2021-02-10T08:12:36Z",
+      "updatedAt": "2021-02-10T08:13:28Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "This section only describes the Layered Attestation, but the scope of Endorsement is more than what\u2019s described here. Endorsement indicates the Attester\u2019s various capabilities such as Claims collection and Evidence signing. For other situations than Layered Attestation, the Endorser and Endorsement are also needed. So why only mention Layered Attestation here? I don\u2019t see any special relationship between DAA and Layered Attestation.",
+          "createdAt": "2021-02-10T08:13:28Z",
+          "updatedAt": "2021-02-10T08:13:28Z"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "MDU6SXNzdWU4MDUyODM4NzQ=",
+      "title": "Collapsed Endorser role and DAA Issuer role",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/6",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> In order to enable the use of DAA, an Endorser role takes on the\r\n> duties of a DAA Issuer in addition to its already defined duties.\r\n> DAA Issuers offer zero-knowledge proofs based on public key\r\n> certificates used for a group of Attesters [DAA].  Effectively, these\r\n> certificates share the semantics of Endorsements, with the following\r\n> exceptions:\r\n\r\nIn the first sentence, I suggest saying that \u201ca DAA Issuer takes on the role of an Endorser\u201d.",
+      "createdAt": "2021-02-10T08:15:20Z",
+      "updatedAt": "2021-02-10T08:15:20Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 7,
+      "id": "MDU6SXNzdWU4MDUyODgyMTc=",
+      "title": "Validity of Evidence",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/7",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> The associated private keys are used by the DAA Issuer to provide\r\n> an Attester with a credential that it can use to convince the\r\n> Verifier that its Evidence is valid.  To keep their anonymity the\r\n> Attester randomizes this credential each time that it is used.\r\n\r\nHow to understand \u201cEvidence is valid\u201d? Does it mean the Evidence is sent from an authentic Attester and not tampered during the conveyance? Or does it mean the Evidence comes from a RoT and is trustable (although the Evidence can diverge from the Reference Values)?",
+      "createdAt": "2021-02-10T08:22:04Z",
+      "updatedAt": "2021-02-10T08:22:19Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "When saying \u201cAttester randomizes this credential\u201d, how many credentials does an Attester have? 1) Can a DAA Issuer have multiple key pairs and use them for one Attester? 2) Can a DAA Issuer use one key pair to generate multiple credentials for one Attester?",
+          "createdAt": "2021-02-10T08:22:19Z",
+          "updatedAt": "2021-02-10T08:22:19Z"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "MDU6SXNzdWU4MDUyODk0Mjg=",
+      "title": "Conveyance of pub-keys",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/8",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> A credential is conveyed from an Endorser to an Attester in\r\n> combination with the conveyance of the public key certificates\r\n> from Endorser to Verifier.\r\n\r\nIs there another way to convey the public key certificate, for example, can the public key certificates be conveyed from Endorser to Attester first and then from Attester to Verifier?\r\n",
+      "createdAt": "2021-02-10T08:24:02Z",
+      "updatedAt": "2021-02-10T08:24:02Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 9,
+      "id": "MDU6SXNzdWU4MDUyOTA2Nzk=",
+      "title": "Definition of DAA duties",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/9",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> The zero-knowledge proofs required cannot be created by an Attester\r\n> alone - like the Endorsements of RoTs - and have to be created by a\r\n> trustable third entity - like an Endorser.  Due to that semantic\r\n> overlap, the Endorser role is augmented via the definition of DAA\r\n> duties as defined below.  This augmentation enables the Endorser to\r\n> convey trustable third party statements both to Verifier roles and\r\n> Attester roles.\r\n\r\nFor \u201cthe definition of DAA duties as defined below\u201d, what is the definition of DAA duties?",
+      "createdAt": "2021-02-10T08:26:05Z",
+      "updatedAt": "2021-02-10T08:26:15Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "In the last sentence, the Endorsement with its original definition is the third party statement for Verifier and Attester, isn\u2019t it? So, \u201caugmentation\u201d isn\u2019t the correct expression.",
+          "createdAt": "2021-02-10T08:26:15Z",
+          "updatedAt": "2021-02-10T08:26:15Z"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "MDU6SXNzdWU4MDUyOTE0NDc=",
+      "title": "Attester Identity",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/10",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Attester Identity:  The provenance of Evidence with respect to a\r\n> distinguishable Attesting Environment MUST be correct and\r\n> unambiguous.\r\n\r\nThe Attester Identity is to identify which Attester the Evidence comes from. But if the Attester has multiple Attesting Environments, what should be the Attester Identity?",
+      "createdAt": "2021-02-10T08:27:16Z",
+      "updatedAt": "2021-02-10T08:27:29Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "The TPM\u2019s AIK certificate is one kind of Attester Identity, right?",
+          "createdAt": "2021-02-10T08:27:28Z",
+          "updatedAt": "2021-02-10T08:27:28Z"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "MDU6SXNzdWU4MDUyOTI0MTI=",
+      "title": "Correct Evidence",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/11",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Attestation Evidence Authenticity:  Attestation Evidence MUST be\r\n> correct and authentic.\r\n\r\nIs it appropriate to say \u201ccorrect Evidence\u201d? If saying so, I think it means that the Evidence satisfies the Attestation Policy for Evidence. ",
+      "createdAt": "2021-02-10T08:28:49Z",
+      "updatedAt": "2021-02-10T08:28:49Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 12,
+      "id": "MDU6SXNzdWU4MDUyOTMzMTA=",
+      "title": "Authentication Secret",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/12",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Authentication Secret:  An Authentication Secret MUST be available\r\n> exclusively to an Attester's Attesting Environment.\r\n> \r\n> The Attester MUST protect Claims with that Authentication Secret,\r\n> thereby proving the authenticity of the Claims included in\r\n> Evidence.  The Authentication Secret MUST be established before\r\n> RATS can take place.\r\n\r\nDoes the Authentication Secret represent the identity of the Attesting Environment?",
+      "createdAt": "2021-02-10T08:30:16Z",
+      "updatedAt": "2021-02-10T08:30:22Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "How to understand the Authentication Secret, and is it necessary all the time? For example, in our implementation, during the router booting up, the BIOS measures the BootLoader and records the measured hash value into the TPM, and the BootLoader measures the OS Kernel and records the measured hash value into the TPM as well. From the Layered Attestation perspective, I think (BIOS + TPM) is the Attesting Environment and (BootLoader + TPM) is also the Attesting Environment. But the Claims (measured hash values) aren\u2019t protected separately, and they finally becomes the Evidence (TPM Quote) and it\u2019s only protected by the TPM\u2019s AIK. So, what is the Authentication Secret?",
+          "createdAt": "2021-02-10T08:30:22Z",
+          "updatedAt": "2021-02-10T08:30:22Z"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "MDU6SXNzdWU4MDUyOTQ5MTY=",
+      "title": "What in an Attester is acutally identified and how?",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/13",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Attester Identity ('attesterIdentity'):  _mandatory_\r\n> A statement about a distinguishable Attester made by an Endorser\r\n> without accompanying evidence about its validity - used as proof\r\n> of identity.\r\n\r\nPrevious section says \u201cAttester Identity\u201d is about \u201ca distinguishable Attesting Environment\u201d, and here says it\u2019s about \u201ca distinguishable Attester\u201d.",
+      "createdAt": "2021-02-10T08:32:58Z",
+      "updatedAt": "2021-02-10T08:33:10Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "How to understand \u201cwithout accompanying evidence about its validity\u201d?",
+          "createdAt": "2021-02-10T08:33:10Z",
+          "updatedAt": "2021-02-10T08:33:10Z"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "MDU6SXNzdWU4MDUyOTU4OTM=",
+      "title": "Attester Identity in DAA",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/14",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Attester Identity ('attesterIdentity'):  _mandatory_\r\n> In DAA, the Attester's identity is not revealed to the verifier.\r\n> The Attester is issued with a credential by the Endorser that is\r\n> randomized and then used to anonymously confirm the validity of\r\n> their evidence.  The evidence is verified using the Endorser's\r\n> public key.\r\n\r\nI think here means the DAA credential represents the Attester Identity.",
+      "createdAt": "2021-02-10T08:34:38Z",
+      "updatedAt": "2021-02-10T08:34:55Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "There is ambiguity of \u201cthat is randomized\u201d, does it mean randomized Endorser or randomized credential?",
+          "createdAt": "2021-02-10T08:34:47Z",
+          "updatedAt": "2021-02-10T08:34:47Z"
+        },
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "For \u201cconfirm the validity of their evidence\u201d, what does \u201ctheir\u201d refer to? And what does \u201cthe validity of evidence\u201d mean?",
+          "createdAt": "2021-02-10T08:34:55Z",
+          "updatedAt": "2021-02-10T08:34:55Z"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "id": "MDU6SXNzdWU4MDUyOTcwMzY=",
+      "title": "Authentication Secret ID",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/15",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Authentication Secret IDs ('authSecID'):  _mandatory_\r\n> A statement representing an identifier list that MUST be\r\n> associated with corresponding Authentication Secrets used to\r\n> protect Evidence.\r\n\r\nPrevious section says \u201cAuthentication Secret\u201d is used to protect Claims, but here says it\u2019s used to protect Evidence.",
+      "createdAt": "2021-02-10T08:36:31Z",
+      "updatedAt": "2021-02-10T08:36:37Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "henkbirkholz",
+          "authorAssociation": "MEMBER",
+          "body": "As I understand, if Authentication Secret represents the identity of Attesting Environment, then it\u2019s not mandatory, at least in our implementation.",
+          "createdAt": "2021-02-10T08:36:37Z",
+          "updatedAt": "2021-02-10T08:36:37Z"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "id": "MDU6SXNzdWU4MDUyOTgyMTk=",
+      "title": "What does a DAA credential represent actually?",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/16",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Authentication Secret IDs ('authSecID'):  _mandatory_\r\n> In DAA, Authentication Secret IDs are represented by the Endorser\r\n> (DAA issuer)'s public key that MUST be used to create DAA\r\n> credentials for the corresponding Authentication Secrets used to\r\n> protect Evidence.\r\n> In DAA, an Authentication Secret ID does not identify a unique\r\n> Attesting Environment but associated with a group of Attesting\r\n> Environments.  This is because an Attesting Environment should not\r\n> be distinguishable and the DAA credential which represents the\r\n> Attesting Environment is randomised each time it used.\r\n\r\nIn my understanding, here says that the DAA credential identities the Attesting Environment. Compared with the description in the \u201cAttester Identity\u201d part, what does the DAA credential represent actually?",
+      "createdAt": "2021-02-10T08:38:25Z",
+      "updatedAt": "2021-02-10T08:38:25Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 17,
+      "id": "MDU6SXNzdWU4MDUyOTkxNDk=",
+      "title": "Reference Claims vs Reference Values",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/17",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Reference Claims ('refClaims')  _mandatory_\r\n> Reference Claims are components of Reference Values as defined in\r\n> [I-D.ietf-rats-architecture].  [Editor's Note: Definition might\r\n> become obsolete, if replaced by Reference Values.  Is there a\r\n> difference between Claims and Values here?  Analogously, why is\r\n> not named Reference Claims in the RATS arch?]\r\n\r\nI suggest using Reference Values to keep consistent with the RATS arch.",
+      "createdAt": "2021-02-10T08:39:43Z",
+      "updatedAt": "2021-02-10T08:39:43Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 18,
+      "id": "MDU6SXNzdWU4MDUzMDAwMzU=",
+      "title": "Application of Reference Values",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/18",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Reference Claims are used to appraise the Claims received from an\r\n> Attester via appraisal by direct comparison.\r\n\r\n\u201cDirect comparison\u201d isn\u2019t the correct expression, the comparison can have other rules.",
+      "createdAt": "2021-02-10T08:40:57Z",
+      "updatedAt": "2021-02-10T08:40:57Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 19,
+      "id": "MDU6SXNzdWU4MDUzMDA5NTc=",
+      "title": "Scope of Claims Set in Claims Selection",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/19",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Claim Selection ('claimSelection'):  _optional_\r\n> A statement that represents a (sub-)set of Claims that can be\r\n> created by an Attester.\r\n> Claim Selections can act as filters that can specify the exact set\r\n> of Claims to be included in Evidence.  An Attester MAY decide\r\n> whether or not to provide all Claims as requested via a Claim\r\n> Selection.\r\n\r\nThe \u201call Claims\u201d may be ambiguous, I\u2019d like to double check, does it refer to all Claims that the Attester can create or refer to all Claims requested in the Claim Selection?\r\n\r\n ",
+      "createdAt": "2021-02-10T08:42:16Z",
+      "updatedAt": "2021-02-10T08:42:16Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 20,
+      "id": "MDU6SXNzdWU4MDUzMDE4MjA=",
+      "title": "A few definitions are missing for Challenge/Response Remote Attestation",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/20",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\nIn the sequence diagram, some elements in the bracket are not defined in the \u201cInformation Elements\u201d section, such as targetEnvironment, collectedClaims, eventLog. Should these elements be defined?",
+      "createdAt": "2021-02-10T08:43:25Z",
+      "updatedAt": "2021-02-10T08:43:25Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 21,
+      "id": "MDU6SXNzdWU4MDUzMDM2MzY=",
+      "title": "Weird appearence of the term requierments at the end of the document",
+      "url": "https://github.com/ietf-rats-wg/draft-ietf-rats-reference-interaction-models/issues/21",
+      "state": "OPEN",
+      "author": "henkbirkholz",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Based on https://mailarchive.ietf.org/arch/msg/rats/okJriJPpapmZgeOfjbVGVP57bQk/\r\n\r\n> Depending on the use cases covered, there can be additional\r\n> requirements.  An exemplary subset is illustrated in this section.\r\n\r\nHere starts to talk about \u201cadditional requirements\u201d, but I wonder there is no other places in this draft talking about requirement, so what are the basic requirements?",
+      "createdAt": "2021-02-10T08:46:02Z",
+      "updatedAt": "2021-02-10T08:46:02Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": []
 }
