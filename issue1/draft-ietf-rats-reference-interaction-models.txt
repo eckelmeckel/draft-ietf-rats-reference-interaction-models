@@ -75,36 +75,36 @@ Table of Contents
 
    1.  Introduction
    2.  Terminology
-   3.  Disambiguation
-   4.  Scope and Intent
-   5.  Direct Anonymous Attestation
-     5.1.  Endorsers
-     5.2.  Endorsers for Direct Anonymous Attestation
-   6.  Normative Prerequisites
-   7.  Generic Information Elements
-   8.  Interaction Models
-     8.1.  Challenge/Response Remote Attestation
-     8.2.  Uni-Directional Remote Attestation
-     8.3.  Streaming Remote Attestation
-   9.  Additional Application-Specific Requirements
-     9.1.  Confidentiality
-     9.2.  Mutual Authentication
-     9.3.  Hardware-Enforcement/Support
-   10. Implementation Status
-     10.1.  Implementer
-     10.2.  Implementation Name
-     10.3.  Implementation URL
-     10.4.  Maturity
-     10.5.  Coverage and Version Compatibility
-     10.6.  License
-     10.7.  Implementation Dependencies
-     10.8.  Contact
-   11. Security and Privacy Considerations
-   12. Acknowledgments
-   13. Change Log
-   14. References
-     14.1.  Normative References
-     14.2.  Informative References
+     2.1.  Disambiguation
+   3.  Scope and Intent
+   4.  Direct Anonymous Attestation
+     4.1.  Endorsers
+     4.2.  Endorsers for Direct Anonymous Attestation
+   5.  Normative Prerequisites
+   6.  Generic Information Elements
+   7.  Interaction Models
+     7.1.  Challenge/Response Remote Attestation
+     7.2.  Uni-Directional Remote Attestation
+     7.3.  Streaming Remote Attestation
+   8.  Additional Application-Specific Requirements
+     8.1.  Confidentiality
+     8.2.  Mutual Authentication
+     8.3.  Hardware-Enforcement/Support
+   9.  Implementation Status
+     9.1.  Implementer
+     9.2.  Implementation Name
+     9.3.  Implementation URL
+     9.4.  Maturity
+     9.5.  Coverage and Version Compatibility
+     9.6.  License
+     9.7.  Implementation Dependencies
+     9.8.  Contact
+   10. Security and Privacy Considerations
+   11. Acknowledgments
+   12. Change Log
+   13. References
+     13.1.  Normative References
+     13.2.  Informative References
    Appendix A.  CDDL Specification for a simple CoAP Challenge/
            Response Interaction
    Authors' Addresses
@@ -163,7 +163,7 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-3.  Disambiguation
+2.1.  Disambiguation
 
    The term "Remote Attestation" is a common expression and often
    associated or connoted with certain properties.  The term "Remote" in
@@ -184,7 +184,7 @@ Table of Contents
    [I-D.ietf-rats-architecture] and the definition of Attestation as
    described in [I-D.ietf-rats-tpm-based-network-device-attest].
 
-4.  Scope and Intent
+3.  Scope and Intent
 
    This document focuses on generic interaction models between Attesters
    and Verifiers in order to convey Evidence.  Complementary procedures,
@@ -210,7 +210,7 @@ Table of Contents
    illustrated in solutions documents to highlight distinct
    contributions.
 
-5.  Direct Anonymous Attestation
+4.  Direct Anonymous Attestation
 
    DAA [DAA] is a signature scheme used in RATS that allows preservation
    of the privacy of users that are associated with an Attester (e.g.
@@ -238,7 +238,7 @@ Table of Contents
    role and the duties of a DAA Issuer are quite similar as illustrated
    in the following subsections.
 
-5.1.  Endorsers
+4.1.  Endorsers
 
    Via its Attesting Environments, an Attester only generates Evidence
    about its Target Environments.  After being appraised to be
@@ -256,7 +256,7 @@ Table of Contents
    Endorsements and originate from external, trustable entities that
    take on the role of an Endorser (e.g., supply chain entities).
 
-5.2.  Endorsers for Direct Anonymous Attestation
+4.2.  Endorsers for Direct Anonymous Attestation
 
    In order to enable the use of DAA, an Endorser role takes on the
    duties of a DAA Issuer in addition to its already defined duties.
@@ -286,7 +286,7 @@ Table of Contents
    convey trustable third party statements both to Verifier roles and
    Attester roles.
 
-6.  Normative Prerequisites
+5.  Normative Prerequisites
 
    In order to ensure an appropriate conveyance of Evidence via
    interaction models in general, the following set of prerequisites
@@ -327,7 +327,7 @@ Table of Contents
       well-protected Claims that an Attester can create and convey to a
       Verifier in a tamper-evident manner.
 
-7.  Generic Information Elements
+6.  Generic Information Elements
 
    This section defines the information elements that are vital to all
    kinds interaction models.  Varying from solution to solution, generic
@@ -436,7 +436,7 @@ Table of Contents
       assertions about integrity or other characteristics of the
       corresponding Attester that are digestable by Relying Parties.
 
-8.  Interaction Models
+7.  Interaction Models
 
    The following subsections introduce and illustrate the interaction
    models:
@@ -460,7 +460,7 @@ Table of Contents
    processed is the most prominent difference between the three
    interaction models.
 
-8.1.  Challenge/Response Remote Attestation
+7.1.  Challenge/Response Remote Attestation
 
 .----------.                                                .----------.
 | Attester |                                                | Verifier |
@@ -522,7 +522,7 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    of Evidence, they may be presented in an encrypted form.
 
    Cryptographic blinding MAY be used at this point.  For further
-   reference see section Section 11.
+   reference see section Section 10.
 
    As soon as the Verifier receives signed Evidence, it validates the
    signature, the Attester Identity, as well as the Nonce, and appraises
@@ -534,7 +534,7 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    characteristics that enables Relying Parties, for example, to assess
    an Attester's trustworthiness.
 
-8.2.  Uni-Directional Remote Attestation
+7.2.  Uni-Directional Remote Attestation
 
 .----------.                                                .----------.
 | Attester |                                                | Verifier |
@@ -603,7 +603,7 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    Distributor, as well as timing of handle distribution are out-of-
    scope of this document.
 
-8.3.  Streaming Remote Attestation
+7.3.  Streaming Remote Attestation
 
 .----------.                                                .----------.
 | Attester |                                                | Verifier |
@@ -654,12 +654,12 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    mandate a refreshed Handle to be conveyed via another subscribe
    operation are out-of-scope of this document.
 
-9.  Additional Application-Specific Requirements
+8.  Additional Application-Specific Requirements
 
    Depending on the use cases covered, there can be additional
    requirements.  An exemplary subset is illustrated in this section.
 
-9.1.  Confidentiality
+8.1.  Confidentiality
 
    Confidentiality of exchanged attestation information may be
    desirable.  This requirement usually is present when communication
@@ -669,14 +669,14 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    management networks, it must be evaluated whether or not the
    transport medium is considered confidential.
 
-9.2.  Mutual Authentication
+8.2.  Mutual Authentication
 
    In particular use cases mutual authentication may be desirable in
    such a way that a Verifier also needs to prove its identity to the
    Attester, instead of only the Attester proving its identity to the
    Verifier.
 
-9.3.  Hardware-Enforcement/Support
+8.3.  Hardware-Enforcement/Support
 
    Depending on given usage scenarios, hardware support for secure
    storage of cryptographic keys, crypto accelerators, as well as
@@ -686,7 +686,7 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    (HSM), Physically Unclonable Functions (PUFs), Shielded Secrets, or
    Trusted Executions Environments (TEEs).
 
-10.  Implementation Status
+9.  Implementation Status
 
    Note to RFC Editor: Please remove this section as well as references
    to [BCP205] before AUTH48.
@@ -711,38 +711,38 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    It is up to the individual working groups to use this information as
    they see fit".
 
-10.1.  Implementer
+9.1.  Implementer
 
    The open-source implementation was initiated and is maintained by the
    Fraunhofer Institute for Secure Information Technology - SIT.
 
-10.2.  Implementation Name
+9.2.  Implementation Name
 
    The open-source implementation is named "CHAllenge-Response based
    Remote Attestation" or in short: CHARRA.
 
-10.3.  Implementation URL
+9.3.  Implementation URL
 
    The open-source implementation project resource can be located via:
    https://github.com/Fraunhofer-SIT/charra
 
-10.4.  Maturity
+9.4.  Maturity
 
    The code's level of maturity is considered to be "prototype".
 
-10.5.  Coverage and Version Compatibility
+9.5.  Coverage and Version Compatibility
 
    The current version ('1bcb469') implements a challenge/response
    interaction model and is aligned with the exemplary specification of
    the CoAP FETCH bodies defined in Section Appendix A of this document.
 
-10.6.  License
+9.6.  License
 
    The CHARRA project and all corresponding code and data maintained on
    github are provided under the BSD 3-Clause "New" or "Revised"
    license.
 
-10.7.  Implementation Dependencies
+9.7.  Implementation Dependencies
 
    The implementation requires the use of the official Trusted Computing
    Group (TCG) open-source Trusted Software Stack (TSS) for the Trusted
@@ -754,11 +754,11 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    [RFC7252] (http://coap.technology/) and the Concise Binary Object
    Representation [RFC7049] (https://cbor.io/).
 
-10.8.  Contact
+9.8.  Contact
 
    Michael Eckel (michael.eckel@sit.fraunhofer.de)
 
-11.  Security and Privacy Considerations
+10.  Security and Privacy Considerations
 
    In a remote attestation procedure the Verifier or the Attester MAY
    want to cryptographically blind several attributes.  For instance,
@@ -772,11 +772,11 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
    This extra information can be used to scramble the Nonce in order to
    counter certain types of relay attacks.
 
-12.  Acknowledgments
+11.  Acknowledgments
 
    Olaf Bergmann, Michael Richardson, and Ned Smith
 
-13.  Change Log
+12.  Change Log
 
    *  Initial draft -00
 
@@ -863,9 +863,9 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
 
       -  updated roster
 
-14.  References
+13.  References
 
-14.1.  Normative References
+13.1.  Normative References
 
    [BCP205]   Sheffer, Y. and A. Farrel, "Improving Awareness of Running
               Code: The Implementation Status Section", BCP 205,
@@ -907,7 +907,7 @@ evidenceGeneration(handle, authSecIDs, collectedClaims)           |
               JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
               June 2019, <https://www.rfc-editor.org/info/rfc8610>.
 
-14.2.  Informative References
+13.2.  Informative References
 
    [DAA]      Brickell, E., Camenisch, J., and L. Chen, "Direct
               Anonymous Attestation", ACM Proceedings of the 11rd ACM
